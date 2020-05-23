@@ -1,0 +1,211 @@
+@keyframes rainbow{
+    0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+@keyframes title-slide{
+    from{
+        padding-right: 70%;
+        color:white;
+    }
+    to{
+        padding-right: 0px;
+    }
+}
+@keyframes appear{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity: 100;
+    }
+}
+body{
+    margin: 0 !important;
+    font-family: 'Work Sans', sans-serif !important;
+}
+#body{
+    margin: 5px;
+}
+.title-box{
+    background-color: white;
+    padding-bottom: 5px;
+}
+#title{
+    margin: 15px 0;
+    margin-bottom: 0;
+    color: rgb(0, 255, 213);
+    text-shadow: 1px 1px 2px #000000;
+    grid-area:title;
+    animation-name: title-slide;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    text-align: center;
+}
+#addButton:hover{
+    background-color: rgb(1, 196, 43);
+    color :white;
+}
+#addButton:active{
+    transition: background-color 0.1s;
+    background-color: rgb(255, 0, 0) !important;
+    color: white;
+}
+#addButton{
+    box-sizing: border-box;
+    margin: 2px !important;
+    padding: 3px; 
+    padding-left: 0;
+    padding-right: 0;
+    grid-area: button;
+    font-size: 17px;
+    animation: appear 0.5s;
+    grid-area: button;
+    transition: background-color 0.5s, color 0.3s;
+    cursor: pointer;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    border:1px solid rgb(1, 196, 43);
+    border-radius: 6px; 
+    margin-bottom: 15px;
+    background-color: white; 
+}
+.delete:active{
+    font-size: 25px !important; 
+}
+.delete{
+    transition: color 0.5s, font-size 0.5s;
+    justify-self: end;
+    grid-area: delete;
+    cursor: pointer !important;
+    /* margin: 0 92%; */
+    color: rgb(192, 0, 0);
+    font-size: 23px;
+    margin-bottom: 0;
+}
+.article-title{
+    word-wrap: break-word;
+    grid-area: title;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 1px;
+}
+.article-author{
+    word-wrap: break-word;
+    grid-area: author;
+    color:gray;
+    font-size:15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.article-author-t{
+    color: black !important;
+}
+.article-content{
+    word-wrap: break-word;
+    grid-area: content;
+    font-size: 15px;
+    color:rgb(48, 48, 48);
+    margin-top: 7px;
+    margin-bottom: 5px;
+}
+.article-content-t{
+    color:black !important;
+}
+#article-box{
+    margin-top: 15px;
+    grid-area:body;
+    display:grid;
+    grid-template-columns: repeat(2, 0.5fr);
+    grid-template-rows: auto;
+    grid-gap: 10px
+}
+.article:hover{
+    background-color: rgb(191, 252, 183);
+    border: 1.5px solid white;
+}
+.article:hover .delete{ 
+    color:red;
+    font-size: 30px;
+}
+.article *{
+    cursor: default;
+}
+.article{
+    transition: background-color 0.5s, border 0.5s;
+    display:grid;
+    grid-template-areas: 
+    "title delete"
+    "author author"
+    "content content";
+    grid-template-columns: 90% 10%; 
+    grid-template-rows: 0.1fr 0.1fr 0.8fr; 
+    min-width: 25%;
+    padding: 10px; 
+    border: 1.5px solid rgb(1, 196, 43);
+    border-radius: 10px;
+}
+.article-t{
+    min-height: 320px;
+    transition: background-color 0.5s, border 0.5s;
+    display:grid;
+    grid-template-areas: 
+    "title delete"
+    "author author"
+    "content content"
+    "button button";
+    grid-template-rows: 0.35fr 0.15fr 0.5fr;
+    grid-template-columns: 100%; 
+    min-width: 25%;
+    padding: 10px; 
+    border: 1.5px solid rgb(1, 196, 43);
+    border-radius: 10px;
+}
+#loading-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 65vh; 
+    /* position: fixed;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px;  */
+    /* margin-top: 30%;  */
+    /* border: 1px solid black; */
+}
+textarea{
+    box-sizing: border-box;
+    margin: 2px !important;
+    resize: none;
+}
+
+#empty-text-1{
+    margin-bottom: 5px;
+    text-align: center;
+    animation:appear 0.3s;
+}
+#empty-text-2{
+    text-align: center;
+    animation:appear 0.3s;
+    color: rgb(85, 85, 85);
+}
+@media only screen and (max-width: 900px){
+    .article-title{
+        font-size: 25px;
+    }
+    #article-box{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
