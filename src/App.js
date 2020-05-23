@@ -24,7 +24,14 @@ class App extends React.Component{
     }
     getCacheData(){
       let data = localStorage.getItem("items");
-      let mem = JSON.parse(data);
+      let mem;
+      if (!data){
+        mem = [];
+      }
+      else{
+        mem = JSON.parse(data);
+      }
+      console.log(mem);
       if (mem.length == 0){
         console.log("Created Dummy Articles");
         let item = {
